@@ -13,7 +13,8 @@ let router = express.Router()
 // .get is used for fetching data
 router.get('/students', function(req, res, next){
     // function acting on Student object, return a promise
-    Student.findAll( {order: ['name']} ).then( students => {
+    //sorting using order: [whatever you want to sort by]
+    Student.findAll( {order: ['starID']} ).then( students => {
         // return json data
         return res.json(students)
     }).catch( err => next(err))
