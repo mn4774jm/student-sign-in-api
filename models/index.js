@@ -12,7 +12,7 @@ let sequelize;
 
 if (config.use_env_variable) {
     // heroku settings set-up
-    sequelize = new sequelize(process.env[config.use_env_variable], config)
+    sequelize = new Sequelize(process.env[config.use_env_variable], config)
 } else {
     // local development set-up
     sequelize = new Sequelize(config)
